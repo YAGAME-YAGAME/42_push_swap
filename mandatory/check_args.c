@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/03/02 21:21:47 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 21:42:29 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	duplicate(t_stack *a, int num)
 int	check_duplicate(t_stack **a, char **arg)
 {
 	int		i;
-	int 	check;
+	int		check;
 	long	num;
 	t_stack	*node;
 
@@ -57,6 +57,7 @@ int	check_duplicate(t_stack **a, char **arg)
 	}
 	return (1);
 }
+
 void	join_argv(char **av, char **all_arg)
 {
 	while (*av)
@@ -80,46 +81,4 @@ int	check_is_only_digit(char **arg)
 		i++;
 	}
 	return (1);
-}
-
-int	is_sorted(t_stack *a)
-{
-	t_stack	*tmp;
-	t_stack	*tmp_1;
-
-	tmp = a;
-	while (tmp)
-	{
-		tmp_1 = tmp->next;
-		while (tmp_1)
-		{
-			if (tmp->data > tmp_1->data)
-				return (1);
-			tmp_1 = tmp_1->next;
-		}
-		tmp = tmp->next;
-		tmp_1 = tmp;
-	}
-	return (-1);
-}
-
-void	is_only_digit(char **split_arg, char *all_arg)
-{
-	if (!check_is_only_digit(split_arg))
-	{
-		ft_clear(split_arg);
-		free(all_arg);
-		ft_error();
-		exit(0);
-	}
-}
-void	is_deferent(t_stack **a, char **split_arg, char *all_arg)
-{
-	if (!check_duplicate(a, split_arg))
-	{
-		ft_clear(split_arg);
-		free(all_arg);
-		ft_clear_lst(a);
-		ft_error();
-	}
 }

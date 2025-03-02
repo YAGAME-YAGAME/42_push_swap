@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_moves.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 09:42:52 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/24 21:54:06 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 22:30:58 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_sort(t_stack **a)
 	while (tmp && tmp->next)
 	{
 		if (tmp->data > tmp->next->data)
-			return (0); // Not sorted
+			return (0);
 		tmp = tmp->next;
 	}
 	return (1);

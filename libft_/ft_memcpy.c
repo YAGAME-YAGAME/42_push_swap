@@ -40,8 +40,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 // 	ft_memcpy(s2 + 2, s2, 4);
 // 	memcpy(s1 + 2, s1, 5);
 
-
-
 // 	printf(" %s\n", s1);
 // 	printf(" %s\n", s2);
 // }

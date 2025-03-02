@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 00:04:39 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/24 01:14:15 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 22:55:59 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,51 @@ void	move_to_top_1(t_stack **a, t_stack **b, t_stack *min, int check)
 	int	while2;
 	int	while1;
 
-	if (check) //
+	if (check)
 	{
-		while2 = min->index - min->target->index; // b
-		while1 = min->target->index;              // a
+		while2 = min->index - min->target->index;
+		while1 = min->target->index;
 		while (while1--)
 			rr(a, b);
 		while (while2--)
 			rb(b);
 	}
-	if (check == 0) //
+	if (check == 0)
 	{
-		while2 = min->target->index - min->index; // b
-		while1 = min->index;                      // a
+		while2 = min->target->index - min->index;
+		while1 = min->index;
 		while (while1--)
 			rr(a, b);
 		while (while2--)
 			ra(a);
 	}
 }
-void	move_to_top_0(t_stack **a, t_stack **b, int first, int secend,
-		int check)
+
+void	move_to_top_0(t_stack **a, t_stack **b, t_stack *min_move, int check)
 {
+	int	first;
+	int	second;
+	int	len_a;
+	int	len_b;
+
+	len_a = ft_lstsize(*a) - min_move->target->index;
+	len_b = ft_lstsize(*b) - min_move->index;
 	if (check)
 	{
+		first = len_b;
+		second = (len_a - len_b);
 		while (first--)
 			rrr(a, b);
-		while (secend--)
+		while (second--)
 			rra(a);
 	}
 	if (check == 0)
 	{
+		first = len_a;
+		second = (len_b - len_a);
 		while (first--)
 			rrr(a, b);
-		while (secend--)
+		while (second--)
 			rrb(b);
 	}
 }
@@ -79,6 +90,7 @@ void	move_to_top_0_1(t_stack **a, t_stack **b, t_stack *obj)
 			ra(a);
 	}
 }
+
 t_stack	*get_min(t_stack *a)
 {
 	t_stack	*tmp;
@@ -94,6 +106,7 @@ t_stack	*get_min(t_stack *a)
 	}
 	return (min);
 }
+
 void	fimish_sort(t_stack **a)
 {
 	t_stack	*min;

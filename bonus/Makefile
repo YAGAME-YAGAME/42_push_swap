@@ -23,6 +23,7 @@ SRCS_BONUS= ./get/get_next_line.c \
 		./utils_bonus.c \
 		./check_args_bonus.c \
 		./check_moves_bonus.c \
+		./check_args_bonus_utils.c \
 
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)

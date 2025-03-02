@@ -28,8 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!buff)
 		return (NULL);
 	ft_strlcpy(buff, s1, ft_strlen(s1) + 1);
-	ft_strlcat(buff, s2, size);	
+	ft_strlcat(buff, s2, size);
 	free((char *)s1);
 	return (buff);
 }
-

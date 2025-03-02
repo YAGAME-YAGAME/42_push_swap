@@ -21,8 +21,8 @@ static int	ft_skip_spaces(char c)
 long	ft_atoi(const char *str, int *check)
 {
 	long long	res;
-	int				q;
-	int				i;
+	int			q;
+	int			i;
 
 	i = 0;
 	res = 0;
@@ -38,10 +38,8 @@ long	ft_atoi(const char *str, int *check)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i++] - '0');
-		if((res * q) > 2147483647 ||  (res * q) < -2147483648)
+		if ((res * q) > 2147483647 || (res * q) < -2147483648)
 			*check = 0;
 	}
-	
 	return (res *= q);
 }
-

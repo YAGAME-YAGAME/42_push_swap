@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:08:30 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 02:37:54 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/02 22:27:24 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	get_midel(t_stack *a)
 	}
 	return (midel / ft_lstsize(a));
 }
+
 int	get_index(t_stack **a, int data)
 {
 	t_stack	*tmp;
@@ -42,6 +43,7 @@ int	get_index(t_stack **a, int data)
 	}
 	return (-1);
 }
+
 void	move_top(t_stack **a, int data)
 {
 	int	index;

@@ -12,21 +12,19 @@
 
 #include "../include/push_swap.h"
 
-
-void   ft_sort_3(t_stack **a)
+void	ft_sort_3(t_stack **a)
 {
-    
-    int first;
-    int second;
-    int third;
-    
-    first = (*a)->data;
-    second = (*a)->next->data;
-    third = (*a)->next->next->data;
-    if (first > second && first > third) 
-        ra(a);
-    if (first < second && second > third) 
-        rra(a);
-    if ((*a)->data > (*a)->next->data) 
-        sa(a);
+	int	first;
+	int	second;
+	int	third;
+
+	first = (*a)->data;
+	second = (*a)->next->data;
+	third = (*a)->next->next->data;
+	if (first > second && first > third)
+		ra(a);
+	if (first < second && second > third)
+		rra(a);
+	if ((*a)->data > (*a)->next->data)
+		sa(a);
 }

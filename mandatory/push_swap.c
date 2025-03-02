@@ -52,7 +52,6 @@ void	check_all_av(char **av, int ac)
 	}
 }
 
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;

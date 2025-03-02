@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 
 t_stack	*ft_lstnew(int content)
 {

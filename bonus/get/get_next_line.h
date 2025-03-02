@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 15:12:34 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 23:56:17 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 23:13:43 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ char	*my_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 char	*my_strjoin(char *s1, char *s2);
 char	*my_substr(char *s, unsigned int start, size_t len);
-
 
 #endif

@@ -5,6 +5,7 @@ MOVES_DIR = ./operations/
 
 SRCS= 	push_swap.c \
 		check_args.c \
+		check_args_utils.c \
 		utils.c \
 		check_moves.c \
 		sort.c \

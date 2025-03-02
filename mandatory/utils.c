@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otzarwal <otzarwal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:19:33 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/03/02 20:42:29 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 22:27:39 by otzarwal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-void 	ft_free_all(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
+void	ft_free_all(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
 {
 	ft_clear(split_arg);
 	free(all_arg);
@@ -35,6 +34,7 @@ void	ft_clear(char **a)
 	}
 	free(a);
 }
+
 void	ft_clear_lst(t_stack **a)
 {
 	t_stack	*tmp;
