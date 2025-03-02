@@ -6,13 +6,12 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:42:48 by yagame            #+#    #+#             */
-/*   Updated: 2025/02/28 18:38:49 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 21:16:15 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../include/push_swap_bonus.h"
-#include "./get_line/get_next_line.h"
 
 
 int     check_instruction(t_stack **a, t_stack **b, char *instruction)
@@ -55,17 +54,17 @@ void   instructions(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
         tmp = line;
         if(check_instruction(a, b, line) == -1)
         {
+            write(1, RED "KO\n" RESET, 10);
             ft_clear(split_arg);
             free(all_arg);
             ft_clear_lst(a);
-            printf("ko 1\n");
-            exit(1);
+            ft_error();
         }
         line = get_next_line(0);
         free(tmp);
     }
     if (is_sorted(*a) == -1 && !*b)
-        printf("\033[0;32mok\n");
+        write(1, GREEN "OK\n" RESET, 10);
     else 
-        printf("\033[0;31mko\n");
+        write(1, RED "KO\n" RESET, 10);
 }

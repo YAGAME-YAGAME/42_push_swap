@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:27:07 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 16:55:25 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 20:43:41 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write(2, "Error\n", 6);
+	write(2, RED "Error\n" RESET, 13);
 	exit(1);
 }
 
@@ -52,6 +52,7 @@ void	check_all_av(char **av, int ac)
 	}
 }
 
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -69,7 +70,10 @@ int	main(int ac, char **av)
 	is_only_digit(split_arg, all_arg);
 	is_deferent(&a, split_arg, all_arg);
 	if (is_sorted(a) == -1)
-		return (0);
+	{
+		ft_free_all(&a, &b, split_arg, all_arg);
+		exit(0);
+	}
 	sort_all(&a, &b);
 	sort_to_a(&a, &b);
 	ft_clear(split_arg);

@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:07:36 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 16:45:09 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 21:21:47 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,17 @@ int	duplicate(t_stack *a, int num)
 int	check_duplicate(t_stack **a, char **arg)
 {
 	int		i;
+	int 	check;
 	long	num;
 	t_stack	*node;
 
 	num = 0;
 	i = 0;
+	check = 0;
 	while (arg[i])
 	{
-		num = ft_atoi(arg[i]);
-		if (num < -2147483648 || num > 2147483647)
+		num = ft_atoi(arg[i], &check);
+		if (check == 1)
 			return (0);
 		if (duplicate(*a, num) == -1)
 			return (0);

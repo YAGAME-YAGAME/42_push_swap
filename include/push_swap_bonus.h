@@ -6,16 +6,19 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 19:52:15 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 20:34:28 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-#include "../bonus/get_line/get_next_line.h"
+#include "../bonus/get/get_next_line.h"
 #include "../libft/libft.h"
 
+#define GREEN "\033[0;32m"
+#define RED "\033[0;31m"
+#define RESET "\033[0m"
 
 
 // best_move_utils

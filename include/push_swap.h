@@ -6,7 +6,7 @@
 /*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:25:11 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/28 18:52:49 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/02 20:44:39 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "../libft/libft.h"
 
+#define GREEN "\033[0;32m"
+#define RED "\033[0;31m"
+#define RESET "\033[0m"
 
 char	*ft_strjoin_2(char *s1, char *s2);
 void    join_argv(char **av, char **all_arg);
@@ -24,6 +27,8 @@ int     check_duplicate(t_stack **a, char **arg);
 void    ft_sort(t_stack **a, t_stack **b);
 void    ft_sort_3(t_stack **a);
 
+// free 
+void 	ft_free_all(t_stack **a, t_stack **b, char **split_arg, char *all_arg);
 
 // best_move_utils
 t_stack	    *find_small(t_stack *a);

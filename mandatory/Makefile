@@ -19,20 +19,28 @@ SRCS= 	push_swap.c \
 		$(MOVES_DIR)ss.c \
 
 OBJS = $(SRCS:.c=.o)
+LIBFT = ../libft/libft.a
+LIBFT_INC = ../libft/libft.h
+INCLUDE = ../include/push_swap.h
+TARGET = ../push_swap
 
-all : $(OBJS) ../libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS) ../libft/libft.a  -o ../push_swap
+all : $(TARGET) 
 
-%.o: %.c  ../include/push_swap.h ../libft/libft.h 
+$(TARGET) : $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT)  -o $(TARGET)
+
+%.o: %.c  $(INCLUDE) $(LIBFT_INC)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-../libft/libft.a :
+$(LIBFT) : $(LIBFT_INC)
 	make -C ../libft/
 
 clean :
+	@make -C ../libft/ clean
 	rm -rf  $(OBJS)
 
 fclean : clean
+	@make -C ../libft/ fclean
 	rm -rf ../push_swap
 
 re : fclean all

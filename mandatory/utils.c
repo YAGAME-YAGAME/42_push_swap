@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:19:33 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/27 02:13:40 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/02 20:42:29 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+
+void 	ft_free_all(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
+{
+	ft_clear(split_arg);
+	free(all_arg);
+	ft_clear_lst(a);
+	ft_clear_lst(b);
+}
 
 void	ft_clear(char **a)
 {

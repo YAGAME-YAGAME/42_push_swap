@@ -26,15 +26,20 @@ SRCS_BONUS= ./get/get_next_line.c \
 
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-
+LIBFT = ../libft/libft.a
+LIBFT_INC = ../libft/libft.h
+INCLUDE = ../include/push_swap_bonus.h
+TARGET = ../checker
 	
-all : $(OBJS_BONUS) ../libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS_BONUS) ../libft/libft.a -o ../checker
+all : $(TARGET)
 
-%.o: %.c ../include/push_swap_bonus.h ../libft/libft.h 
+$(TARGET) : $(OBJS_BONUS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBFT) -o $(TARGET)
+
+%.o: %.c $(INCLUDE) $(LIBFT_INC)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-../libft/libft.a :
+$(LIBFT) : $(LIBFT_INC)
 	make -C ../libft/
 
 clean :

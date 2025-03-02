@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:41:28 by otzarwal          #+#    #+#             */
-/*   Updated: 2025/02/26 22:13:33 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/02 21:06:42 by yagame           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_skip_spaces(char c)
 		|| c == '\v');
 }
 
-long	ft_atoi(const char *str)
+long	ft_atoi(const char *str, int *check)
 {
 	long long	res;
 	int				q;
@@ -36,7 +36,12 @@ long	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		res = res * 10 + (str[i++] - '0');
+		if((res * q) > 2147483647 ||  (res * q) < -2147483648)
+			*check = 0;
+	}
+	
 	return (res *= q);
 }
 
