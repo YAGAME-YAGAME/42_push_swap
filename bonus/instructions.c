@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yagame <yagame@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:42:48 by yagame            #+#    #+#             */
-/*   Updated: 2025/03/02 21:16:15 by yagame           ###   ########.fr       */
+/*   Updated: 2025/03/03 16:01:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,18 @@ void	instructions(t_stack **a, t_stack **b, char **split_arg, char *all_arg)
 		tmp = line;
 		if (check_instruction(a, b, line) == -1)
 		{
-			write(1, RED "KO\n" RESET, 10);
 			ft_clear(split_arg);
 			free(all_arg);
 			ft_clear_lst(a);
+			write(1, "KO\n", 3);
+			free(tmp);
 			ft_error();
 		}
 		line = get_next_line(0);
 		free(tmp);
 	}
 	if (is_sorted(*a) == -1 && !*b)
-		write(1, GREEN "OK\n" RESET, 10);
+		write(1,"OK\n", 3);
 	else
-		write(1, RED "KO\n" RESET, 10);
+		write(1,"KO\n", 3);
 }
